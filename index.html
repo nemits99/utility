@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akses Google Sheets</title>
+    <link rel="manifest" href="./manifest.json">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .frame {
+            background: #000;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 350px;
+        }
+        h1 {
+            font-size: 26px;
+            color: #c4c400;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+        h2 {
+            font-size: 20px;
+            color: #008000;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+        .menu {
+            display: flex;
+            justify-content: left;
+            margin-bottom: 10px;
+        }
+        .menu a {
+            margin: 0 10px;
+            font-size: 16px;
+            color: #0080ff;
+            text-decoration: none;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 5px;
+            transition: all 0.3s ease;
+        }
+        .menu a:hover {
+            color: #4CAF50;
+            border-bottom: 2px solid #4CAF50;
+        }
+        .submenu {
+            margin: 10px 0;
+        }
+        .submenu a {
+            display: block;
+            font-size: 14px;
+            color: #0080ff;
+            text-decoration: none;
+            margin: 5px 0;
+            padding: 5px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .submenu a:hover {
+            background-color: #f0f0f0;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="frame">
+        <h1>Akses Data Maintenance</h1>
+      
+        <!-- Submenu Form -->
+        <div id="form" class="submenu">
+            <h2>Form</h2>
+            <a href="https://forms.gle/6w1YfyAkTGzRDKPT8" target="_blank">📋 Form Pembelian Barang</a>
+            <a href="https://forms.gle/z4ErnmJGrmkDBNbn8" target="_blank">🛠️ Form Maintenance Building</a>
+            <a href="https://forms.gle/wEo2GMCGzDje2Cks8" target="_blank">🛠️ Form Cleaning Compressor</a>
+            <a href="https://forms.gle/ZZq5fV58zp7cVY7v9" target="_blank">🛠️ Form Penggantian Part Mesin</a>
+            <a href="https://forms.gle/sVY8pikrNk6A2dfz6" target="_blank">🛠️ Form Cleaning Chiller</a>
+        </div>
+        <!-- Submenu Data -->
+        <div id="data" class="submenu">
+            <h2>Data</h2>
+            <a href="https://docs.google.com/spreadsheets/d/1uLPnLcD4nF3DA33zZGY1AAxqFK_k1QJWLJEKa2l7HXU/edit?usp=sharing" target="_blank">📦 Data Pembelian Barang</a>
+            <a href="https://docs.google.com/spreadsheets/d/1HkqdQNyrmuBrViLKk7buVCdS4Yg9_y4Qe-4UHkpoJNc/edit?usp=sharing" target="_blank">🏢 Data Maintenance Building</a>
+            <a href="https://docs.google.com/spreadsheets/d/1S83NlBdUmgMMZC5hSIYnlDlmVMAQo3JhrZZWlgAOOFk/edit?usp=sharing" target="_blank">🛠️ Data Cleaning Compressor</a>
+            <a href="https://docs.google.com/spreadsheets/d/1NOlEhBZa2BAztIFhTJNZPuqUjpNbNdJLhRFEh4ECAUg/edit?usp=sharing" target="_blank">🛠️ Data Penggantian Part Mesin</a>
+            <a href="https://docs.google.com/spreadsheets/d/18HAwY1V7ymVvew0_RBfjCBSsJL1B5tx4eUxG9dX33_o/edit?usp=sharing" target="_blank">🛠️ Data Cleaning Chiller</a>
+            <a href="https://nemits99.github.io/jadwal-cleaningac" target="_blank">🛠️Jadwal Cleaning Ac</a>
+        </div>
+    </div>
+    <script>
+    if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("./service-worker.js")
+        .then((registration) => {
+            console.log("Service Worker terdaftar dengan sukses:", registration.scope);
+        })
+        .catch((error) => {
+            console.log("Service Worker pendaftaran gagal:", error);
+        });
+    }
+</script>
+</body>
+</html>
